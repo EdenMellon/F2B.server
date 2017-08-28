@@ -4,7 +4,8 @@ var customController = function customController() {
      */
     return {
         index       :  require('./indexController'),
-        site       :  require('./site/indexController')
+        site       :  require('./site/indexController'),
+        partials       :  require('./partials/indexController')
     };
 }
 

@@ -10,6 +10,7 @@ var router = express.Router();
 var apps = {};
 
 exports.load = function init(app) {
+    app.use(require(path.resolve('routes')));
     loadRouterDir(function(error, result) {
         _.forEach(apps, function(router, name) {
             loadRouter(app, router, router.namespace || name);
@@ -21,11 +22,11 @@ exports.load = function init(app) {
 };
 
 function loadRouter(app, router, name) {
-    var routerPath;
-
-    routerPath = '/' + name;
+    if(name.substring(1) != '/') {
+        name = '/' + name;
+    }
     logger.info("Add resource of express route for %s ", name);
-    app.use(routerPath, router);
+    app.use(name, router);
 }
 
 /* Router Auto Load Dir

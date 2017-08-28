@@ -44,3 +44,10 @@ footer div#footer-copyright {
 .display-time {
     color: #007bff;
 }
+
+.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
+    width: 13px;
+    padding: 6px 27px;
+    min-width: 13px;
+    margin-top: 2px;
+}

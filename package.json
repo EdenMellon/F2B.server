@@ -15,11 +15,14 @@
     "express-hbs": "^1.0.4",
     "handlebars": "^4.0.10",
     "hbs": "^4.0.1",
+    "http-status": "^1.0.1",
     "lodash": "^4.17.4",
     "log4js": "^2.3.3",
     "moment": "^2.18.1",
     "morgan": "~1.8.1",
     "pug": "~2.0.0-beta11",
-    "serve-favicon": "~2.4.2"
+    "request": "^2.81.0",
+    "serve-favicon": "~2.4.2",
+    "meellon-request": "git+ssh://git@github.com:EdenMellon/node_module.request.git"
   }
 }

@@ -1,4 +1,18 @@
 {
   "env": "production",
-  "port": "3030"
+  "port": "3030",
+
+  "externals": {
+    "search": {
+      "google": {
+        "uri": {
+          "method": "GET",
+          "url": "https://ajax.googleapis.com/ajax/services/search/web",
+          "defaultParams": {
+            "v": "1.0"
+          }
+        }
+      }
+    }
+  }
 }

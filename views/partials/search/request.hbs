@@ -1,0 +1,30 @@
+<script>
+    $(document).ready(function() {
+        $('form[name=searchForm]').submit(function(e) {
+            e.preventDefault();
+            var $form = $(this);
+            var type = ($form.attr('method') || 'GET').toUpperCase();
+            common.ajaxCall(type, $form.attr('action'), $form
+                    , function success(data) {
+                        showSuccess('검색 성공.');
+                    }, function fail(error) {
+                        // [common.js] server message 를 받아서 뿌려줌.
+                    }, function always(){
+                    });
+        });
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+<div class="col-lg-12 mx-auto">
+    <form name="searchForm" method="POST" action="/search" data-toggle="validator" role="form">
+        <div class="form-group">
+            <label for="exampleInputSearch">Search</label>
+            <input type="text" name="query" class="form-control" id="exampleInputSearch" placeholder="검색어" required>
+        </div>
+        <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Api version 이슈 (Closed-API) 로 동작 안함. request module 만 확인 가능">
+            !
+        </button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
