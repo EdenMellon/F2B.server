@@ -46,7 +46,7 @@ common = {
             params = $(params).is('form') ? params.serialize() : params;
         }
 
-        if( !isFunction(success) || (!isFunction(fail)) || (!isFunction(always)) ) {
+        if( !isFunction(success) || (!isFunction(fail)) ) {
             showError('Method params이 올바르지 않습니다.', function() {
                 return false;
             });
