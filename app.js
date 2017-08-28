@@ -36,6 +36,10 @@ app.use(function(req, res, next) {
 });
 
 preRouter.load(app);
+
+require(path.resolve('lib/hbsRegister')).partials(hbs);
+require(path.resolve('lib/hbsRegister')).helper(hbs);
+
 // app.use(require(path.resolve('routes')));
 // var index = require('./routes/index');
 // app.use('/', index);
