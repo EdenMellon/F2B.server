@@ -32,7 +32,7 @@
                     <!--<![endif]-->
                 </a>
             </h1>
-            <span class="display-time">{{serverTime}}</span>
+            <span class="display-time">{{initTime}}</span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -79,8 +79,12 @@
 <script src="/javascripts/bootstraps/scrolling-nav.js"></script>
 <script src="/javascripts/bootstraps/bootbox.min.js"></script>
 
+<!-- Plugin JavaScript ETC -->
+<script src="/javascripts/etc-plugins/moment.min.js"></script>
+
 <!-- custom plugins -->
 <script src="/javascripts/js-cores/common.js"></script>
+<script src="/javascripts/js-cores/timer.js"></script>
 <script src="/javascripts/pages/{{jsPath}}.js"></script>
 
 </body>

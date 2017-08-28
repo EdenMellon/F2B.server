@@ -15,6 +15,14 @@ var algorithm = require(path.resolve('lib/algorithm'));
 
 
 module.exports = {
+    getTime: function(res, res, next) {
+        var result = responseJson.success(httpStatus.OK, httpStatus[httpStatus.OK]
+            , {
+                time: res.timeLib.getDateTime(),
+                format: res.timeLib.getDefaultFormat()
+            });
+        res.status(result.code).json(result);
+    },
     index: function index(req, res, next) {
         var pagePath = 'index';
         res.render(pagePath, {jsPath: pagePath});
@@ -80,7 +88,7 @@ module.exports = {
         var num = parseInt(req.query.num, 10);
         var eCode = req.query.eCode;
 
-        var result = responseJson.success(httpStatus.OK, httpStatus[httpStatus.OK], req.body);
+        var result = responseJson.success(httpStatus.OK, httpStatus[httpStatus.OK], req.query);
         if(!paramUtil.checkParam(num)) {
             result = responseJson.error(httpStatus.BAD_REQUEST
                 , httpStatus[httpStatus.BAD_REQUEST]

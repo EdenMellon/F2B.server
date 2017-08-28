@@ -7,5 +7,6 @@ router.get('/', controller.index);
 router.post('/check', controller.checkPassword);
 router.post('/search', controller.googleSearch);
 router.get('/algorithm', controller.alTest);
+router.get('/time', controller.getTime);
 
 module.exports = router;

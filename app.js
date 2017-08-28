@@ -29,8 +29,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next) {
-    res.locals.serverTime = res.serverTime = date.getFullDate();
-    logger.debug('server time: ', res.serverTime);
+    res.locals.timeLib = res.timeLib = lib.getDate();
+    res.locals.callTime = res.callTime = res.timeLib.getFullDate();
+    logger.debug('call time: ', res.callTime);
     next();
 });
 

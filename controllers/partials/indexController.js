@@ -15,7 +15,7 @@ module.exports = {
     partials: function partials(req, res, next) {
         var partials = req.query.partials;
 
-        var result = responseJson.success(httpStatus.OK, httpStatus[httpStatus.OK], req.body);
+        var result = responseJson.success(httpStatus.OK, httpStatus[httpStatus.OK], req.query);
         if(!paramUtil.checkParam(partials)) {
             result = responseJson.error(httpStatus.BAD_REQUEST
                 , httpStatus[httpStatus.BAD_REQUEST]
